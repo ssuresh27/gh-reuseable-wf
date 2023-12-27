@@ -1,0 +1,15 @@
+name : Reusable WF
+on : 
+    workflow_call:
+        inputs : 
+            msg:
+                description: This is from reusable wf
+                required: false
+                default : Hello
+                type : string
+        jobs:
+            remote:
+                runs-on: ubuntu-latest
+                steps:
+                    - name : Get Code
+                       run : echo " ${{ inputs.msg }} "

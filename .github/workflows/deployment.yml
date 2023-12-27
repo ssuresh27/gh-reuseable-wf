@@ -1,0 +1,12 @@
+name : Main WF
+on : push
+jobs:
+    main:
+        runs-on : ubuntu-latest
+        steps:
+            - name : local
+              run : echo "This is from local WF"
+            - name : call-remote
+              uses: ./github/workflows/reusable.yml
+              with :
+                msg : hello from main
