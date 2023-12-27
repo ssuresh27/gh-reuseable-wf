@@ -1,4 +1,6 @@
-name : Reusable WF
+#https://docs.github.com/en/actions/managing-workflow-runs/skipping-workflow-runs
+#Add commit message [skip ci] to skip workflow 
+name : Workflow Status
 on : 
     workflow_call:
         inputs : 
@@ -7,9 +9,10 @@ on :
                 required: false
                 default : Hello
                 type : string
-        jobs:
-            remote:
-                runs-on: ubuntu-latest
-                steps:
-                    - name : Get Code
-                       run : echo " ${{ inputs.msg }} "
+        
+jobs: 
+    remote-wf:
+        runs-on : ubuntu-latest
+        steps:
+            - name : input-from-main-wf
+              run  : echo " ${{inputs.msg}}"
