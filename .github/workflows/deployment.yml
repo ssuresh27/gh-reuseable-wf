@@ -9,6 +9,6 @@ jobs:
             - name : local
               run : echo "This is from local WF"
             - name : call-remote
-              uses: ./github/workflows/reusable.yml
+              uses: ./.github/workflows/reusable.yml
               with :
                 msg : hello from main
