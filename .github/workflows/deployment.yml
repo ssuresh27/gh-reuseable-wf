@@ -4,6 +4,8 @@ jobs:
     main:
         runs-on : ubuntu-latest
         steps:
+            - name : get code
+              run : actions/checkout@v3
             - name : local
               run : echo "This is from local WF"
             - name : call-remote
