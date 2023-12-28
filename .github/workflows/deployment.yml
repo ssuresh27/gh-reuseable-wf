@@ -2,21 +2,8 @@ name : Main WF
 on : push
 jobs:
     main:
-        runs-on : ubuntu-latest
-        steps:
-            - name : get code
-              uses : actions/checkout@v3
-            - name: list-files
-              run : |
-                pwd
-                ls
-                ls -la
-                ls -la .github/workflows/*
-                
-            - name : call-remote
-              uses : ssuresh27/gh-reuseable-wf/.github/workflows/reusable.yml@main
-              with :
-                msg : hello from main
-                #   uses : ./.github/workflows/reusable.yml
-                #https://stackoverflow.com/questions/71458189/github-action-workflow-call-does-not-use-up-to-date-input-values
-                
+        uses : ssuresh27/gh-reuseable-wf/.github/workflows/reusable.yml@main
+        with :
+            msg : hello from main
+            #   uses : ./.github/workflows/reusable.yml
+            #https://stackoverflow.com/questions/71458189/github-action-workflow-call-does-not-use-up-to-date-input-values
