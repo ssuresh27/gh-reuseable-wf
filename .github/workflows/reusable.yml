@@ -15,5 +15,5 @@ jobs:
         runs-on : ubuntu-latest
         steps:
             - name : input-from-main-wf
-            #   run  : echo " ${{inputs.msg}}"
-              run : echo "Hi"
+              run  : echo " ${{inputs.msg}}"
+            #   run : echo "Hi"
