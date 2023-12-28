@@ -11,8 +11,11 @@ jobs:
                 pwd
                 ls
                 ls -la
-                ls -la **
+                ls -la */*/*
+            
+                
             - name : call-remote
+              
               uses : ./.github/workflows/reusable.yml
               with :
                 msg : hello from main
