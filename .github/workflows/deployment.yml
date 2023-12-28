@@ -6,8 +6,8 @@ jobs:
         steps:
             - name : get code
               uses : actions/checkout@v3
-            - name : local
-              run : echo "This is from local WF"
+            - name: list-files
+              run : echo "ls"
             - name : call-remote
               uses: ./.github/workflows/reusable.yml
               with :
