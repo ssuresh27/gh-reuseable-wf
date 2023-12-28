@@ -7,8 +7,12 @@ jobs:
             - name : get code
               uses : actions/checkout@v3
             - name: list-files
-              run : ls
+              run : |
+                pwd
+                ls
+                ls -la
+                ls -la **
             - name : call-remote
-              uses: ./.github/workflows/reusable.yml
+              uses: main : ./.github/workflows/reusable.yml
               with :
                 msg : hello from main
